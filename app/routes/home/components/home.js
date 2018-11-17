@@ -1,27 +1,44 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import {Container} from 'native-base';
+
+import MapContainer from './MapContainer';
+
 
 class Home extends React.Component {
     componentDidMount(){
         this.props.setName();
     }
     render() {
+        const region={
+            latitude: 37.78825,
+            longitude: -122.4324,
+            latitudeDelta: 0.015,
+            longitudeDelta: 0.0121,
+          }
         return(
-            <View style={styles.container}>
-        <Text>Hello {this.props.name}</Text>
-        </View>
+           
+        <Container>
+            <MapContainer region={region}/>
+        </Container>
+       
 
         );
         
     }
 } 
 
+const styles={
+    container:{
+        flex:1.,
+        justifyContent:'center',
+        alignItems: 'center',
+    },
+    map:{
+        ...StyleSheet.absoluteFillObject
+    }
+}
+
+
 export default Home;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center"
-    }
-})

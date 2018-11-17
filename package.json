@@ -7,14 +7,22 @@
     "test": "jest"
   },
   "dependencies": {
+    "native-base": "^2.8.1",
     "react": "16.3.0-alpha.1",
-    "react-native": "0.54.4"
+    "react-addons-update": "^15.6.2",
+    "react-native": "0.54.4",
+    "react-native-maps": "^0.22.1",
+    "react-native-router-flux": "^4.0.5",
+    "react-redux": "^5.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
     "babel-preset-react-native": "4.0.1",
     "jest": "23.6.0",
-    "react-test-renderer": "16.3.0-alpha.1"
+    "react-test-renderer": "16.3.0-alpha.1",
+    "redux-logger": "^3.0.6"
   },
   "jest": {
     "preset": "react-native"

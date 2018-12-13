@@ -7,19 +7,20 @@ import MapContainer from './MapContainer';
 
 class Home extends React.Component {
     componentDidMount(){
-        this.props.setName();
+        this.props.getCurrentLocation();
     }
+    onMapLayout = () => {
+        this.setState({ isMapReady: true });
+      }
+    
     render() {
-        const region={
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.015,
-            longitudeDelta: 0.0121,
-          }
-        return(
+       
+        return( 
            
-        <Container>
-            <MapContainer region={region}/>
+        <Container style={styles.container}> 
+            {this.props.region.latitude &&
+            <MapContainer region={this.props.region} getInputData={this.props.getInputData}/>
+            } 
         </Container>
        
 
@@ -30,7 +31,7 @@ class Home extends React.Component {
 
 const styles={
     container:{
-        flex:1.,
+        flex:1,
         justifyContent:'center',
         alignItems: 'center',
     },
